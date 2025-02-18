@@ -20,5 +20,4 @@ public class Reservation implements Serializable {
     @JoinColumn(name = "chambre_id")
     private Chambre chambre;
 
-    // Getters and Setters
 }

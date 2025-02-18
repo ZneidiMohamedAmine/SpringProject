@@ -22,6 +22,5 @@ public class Chambre implements Serializable {
     @OneToMany(mappedBy = "chambre")
     private List<Reservation> reservations;
 
-    // Getters and Setters
 }
 

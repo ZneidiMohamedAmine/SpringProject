@@ -16,6 +16,5 @@ public class Universite implements Serializable {
     @OneToMany(mappedBy = "universite")
     private List<Foyer> foyers;
 
-    // Getters and Setters
 }
 

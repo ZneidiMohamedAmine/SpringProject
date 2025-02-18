@@ -20,5 +20,4 @@ public class Bloc implements Serializable {
     @OneToMany(mappedBy = "bloc")
     private List<Chambre> chambres;
 
-    // Getters and Setters
 }

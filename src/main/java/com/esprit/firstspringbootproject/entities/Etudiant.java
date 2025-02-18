@@ -20,5 +20,4 @@ public class Etudiant implements Serializable {
     @OneToMany(mappedBy = "etudiant")
     private List<Reservation> reservations;
 
-    // Getters and Setters
 }
