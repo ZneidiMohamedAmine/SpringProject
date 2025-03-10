@@ -5,6 +5,8 @@ import com.esprit.firstspringbootproject.repository.*;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class ChambreService implements IChambreService {
@@ -19,5 +21,15 @@ public class ChambreService implements IChambreService {
     public Chambre removeChambre(Chambre ch) {
         chambreRepo.delete(ch);
         return null;
+    }
+
+    @Override
+    public List<Chambre> getChambresNonReserveParNomUniversiteEtTypeChambre(String nomUniversite, TypeChambre type) {
+        return chambreRepo.findChambresNonReservees(nomUniversite, type);
+    }
+
+    @Override
+    public List<Chambre> getChambresParBlocEtType(long idBloc, TypeChambre typeC) {
+        return chambreRepo.findByBlocIdBlocAndTypeC(idBloc, typeC);
     }
 }

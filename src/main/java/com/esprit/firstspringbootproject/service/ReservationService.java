@@ -5,6 +5,9 @@ import com.esprit.firstspringbootproject.repository.*;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class ReservationService implements IReservationService {
@@ -19,5 +22,10 @@ public class ReservationService implements IReservationService {
     public Reservation removeReservation(Reservation res) {
         reservationRepo.delete(res);
         return null;
+    }
+
+    @Override
+    public List<Reservation> getReservationParAnneeUniversitaireEtNomUniversite(Date anneeUniversitaire, String nomUniversite) {
+        return reservationRepo.findReservationsByAnneeUniversitaire(anneeUniversitaire);
     }
 }

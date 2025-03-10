@@ -7,6 +7,9 @@ import com.esprit.firstspringbootproject.service.IReservationService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
+import java.util.List;
+
 @RestController
 @RequestMapping("/reservation")
 @AllArgsConstructor
@@ -22,5 +25,10 @@ public class ReservationController {
     public Reservation deleteReservation(@RequestBody Reservation res) {
         reservationService.removeReservation(res);
         return null;
+    }
+
+    @GetMapping("/reservations/{anneeUniversitaire}/{nomUniversite}")
+    public List<Reservation> getReservationsParAnneeUniversitaire(@PathVariable Date anneeUniversitaire, @PathVariable String nomUniversite) {
+        return reservationService.getReservationParAnneeUniversitaireEtNomUniversite(anneeUniversitaire, nomUniversite);
     }
 }

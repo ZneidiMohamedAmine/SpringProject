@@ -16,5 +16,7 @@ public class Universite implements Serializable {
     @OneToMany(mappedBy = "universite")
     private List<Foyer> foyers;
 
+    public void setFoyer(Foyer foyer) {
+    }
 }
 

@@ -3,6 +3,7 @@ package com.esprit.firstspringbootproject.service;
 import com.esprit.firstspringbootproject.entities.Bloc;
 import com.esprit.firstspringbootproject.repository.IBlocRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -10,7 +11,9 @@ import org.springframework.stereotype.Service;
 public class BlocService implements IBlocService{
 
 
-    IBlocRepository blocrep;
+
+    private final IBlocRepository blocrep;
+
     @Override
     public Bloc addBloc(Bloc bl)
     {

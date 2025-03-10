@@ -6,4 +6,6 @@ public interface IUniversiteService {
     Universite addUniversite(Universite uni);
 
     Universite removeUniversite(Universite uni);
+
+    Universite affecterFoyerAUniversite(long idFoyer, String nomUniversite);
 }

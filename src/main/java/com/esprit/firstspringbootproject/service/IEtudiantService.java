@@ -6,4 +6,6 @@ public interface IEtudiantService {
     Etudiant addEtudiant(Etudiant et);
 
     Etudiant removeEtudiant(Etudiant et);
+
+    Etudiant removeEtudiant(Long id);
 }
